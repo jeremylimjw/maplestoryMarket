@@ -149,7 +149,7 @@ var items = [
         src: "public/images/belt.jpg",
         stats: "30/24%luk",
         co: "0",
-        aw: "3.5k",
+        aw: "3k",
         status: ""
     },{
         name: "Fafnir Hat",
