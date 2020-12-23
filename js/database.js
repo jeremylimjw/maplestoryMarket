@@ -24,11 +24,11 @@ var items = [
         aw: "1k",
         status: ""
     },{
-        name: "SLH",
+        name: "Superior Lidium Heart",
         thumb: "public/thumbs/slh.jpg",
         src: "public/images/slh.jpg",
         stats: "33/27%luk",
-        co: "5k",
+        co: "5.5k",
         aw: "7k",
         status: ""
     },{
