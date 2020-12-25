@@ -21,16 +21,16 @@ var items = [
         src: "public/images/charm2.jpg",
         stats: "33%att 75%bd 9% dmg",
         co: "0",
-        aw: "1k",
-        status: ""
+        aw: "0",
+        status: "SOLD"
     },{
         name: "Superior Lidium Heart",
         thumb: "public/thumbs/slh.jpg",
         src: "public/images/slh.jpg",
         stats: "33/27%luk",
-        co: "6k",
-        aw: "6.5k",
-        status: ""
+        co: "0",
+        aw: "0",
+        status: "SOLD"
     },{
         name: "Superior Gollux Ring",
         thumb: "public/thumbs/sgr.jpg",
