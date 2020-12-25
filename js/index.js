@@ -33,6 +33,7 @@ var modal = document.getElementById("modal");
 function closeModal() {
     container.classList.remove("blur");
     modal.classList.remove("active");
+    setTimeout(() => {  document.getElementById("selected-src").src = "public/placeholder.png"; }, 500);
 }
 
 function openModal() {
@@ -57,7 +58,6 @@ document.onkeydown = function(e) {
 var cards = document.getElementsByClassName("card");
 
 var click_function = function() {
-    document.getElementById("selected-src").src = "public/placeholder.png";
     document.getElementById("selected-name").innerText = this.getAttribute("data-name");
     document.getElementById("selected-co").innerText = this.getAttribute("data-co");
     document.getElementById("selected-aw").innerText = this.getAttribute("data-aw");
