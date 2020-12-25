@@ -25,15 +25,29 @@ for (let i = 0; i < items.length; i++) {
     document.getElementById("body").innerHTML += template;
 }
 
-var container = document.getElementById("container");
+var cards = document.getElementsByClassName("card");
 
+var click_function = function() {
+    document.getElementById("selected-name").innerText = this.getAttribute("data-name");
+    document.getElementById("selected-co").innerText = this.getAttribute("data-co");
+    document.getElementById("selected-aw").innerText = this.getAttribute("data-aw");
+    document.getElementById("selected-src").src = this.getAttribute("data-src");
+    document.getElementById("selected-stats").innerText = this.getAttribute("data-stats");
+    document.getElementById("selected-status").innerText = this.getAttribute("data-status");
+    openModal();
+};
+
+for (var i = 0; i < cards.length; i++) {
+    cards[i].addEventListener('click', click_function, false);
+}
+
+var container = document.getElementById("container");
 var closeButton = document.getElementById("close-button");
 var modal = document.getElementById("modal");
 
 function closeModal() {
     container.classList.remove("blur");
     modal.classList.remove("active");
-    setTimeout(() => {  document.getElementById("selected-src").src = "public/placeholder.png"; }, 500);
 }
 
 function openModal() {
@@ -53,20 +67,4 @@ document.onkeydown = function(e) {
     if (e.key == "Escape") {
         closeModal();
     }
-}
-
-var cards = document.getElementsByClassName("card");
-
-var click_function = function() {
-    document.getElementById("selected-name").innerText = this.getAttribute("data-name");
-    document.getElementById("selected-co").innerText = this.getAttribute("data-co");
-    document.getElementById("selected-aw").innerText = this.getAttribute("data-aw");
-    document.getElementById("selected-src").src = this.getAttribute("data-src");
-    document.getElementById("selected-stats").innerText = this.getAttribute("data-stats");
-    document.getElementById("selected-status").innerText = this.getAttribute("data-status");
-    openModal();
-};
-
-for (var i = 0; i < cards.length; i++) {
-    cards[i].addEventListener('click', click_function, false);
 }
