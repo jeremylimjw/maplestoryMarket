@@ -25,9 +25,41 @@ for (let i = 0; i < items.length; i++) {
     document.getElementById("body").innerHTML += template;
 }
 
+var container = document.getElementById("container");
+
+var closeButton = document.getElementById("close-button");
 var modal = document.getElementById("modal");
+
+function toggleModal() {
+    container.classList.toggle("blur");
+    modal.classList.toggle("active");
+}
+
+function closeModal() {
+    container.classList.remove("blur");
+    modal.classList.remove("active");
+}
+
+function openModal() {
+    container.classList.add("blur");
+    modal.classList.add("active");
+}
+
+closeButton.onclick = closeModal;
+
+window.onclick = function(event) {
+    if (event.target == document.getElementsByTagName("BODY")[0]) {
+        closeModal();
+    }
+}
+
+document.onkeydown = function(e) {
+    if (e.key == "Escape") {
+        closeModal();
+    }
+}
+
 var cards = document.getElementsByClassName("card");
-var close_button = document.getElementById("close-button");
 
 var click_function = function() {
     document.getElementById("selected-name").innerText = this.getAttribute("data-name");
@@ -36,17 +68,9 @@ var click_function = function() {
     document.getElementById("selected-src").src = this.getAttribute("data-src");
     document.getElementById("selected-stats").innerText = this.getAttribute("data-stats");
     document.getElementById("selected-status").innerText = this.getAttribute("data-status");
-    modal.style.display = "block";
+    openModal();
 };
 
 for (var i = 0; i < cards.length; i++) {
     cards[i].addEventListener('click', click_function, false);
-}
-
-window.onclick = function(event) {
-    if (event.target == modal) {
-      modal.style.display = "none";
-    } else if (event.target == close_button) {
-        modal.style.display = "none";
-    }
 }
