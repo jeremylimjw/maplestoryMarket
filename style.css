@@ -37,13 +37,14 @@
     border-radius: 5px;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
     padding: 25px;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .card {
     position: relative;
     display: inline-block;
     width: 200px;
-    height: 320px;
     border: 1px solid #C0C0C0;
     padding: 0;
     margin: 5px;
@@ -97,11 +98,8 @@
 .card .sub-text {
     font-size: 12px;
     text-align: center;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
     color: #A9A9A9;
+    user-select: none;
 }
 
 .red-button {
