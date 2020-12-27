@@ -17,7 +17,7 @@ for (let i = 0; i < items.length; i++) {
         '<div class="text">' +
         '<span style="color: #808080;">' + items[i].stats + '</span>';
 
-    if (items[i].aw != 0) {
+    if (items[i].status != "SOLD") {
         template += 
             '<br>' +
             '<span>c/o ' + items[i].co + '</span>' +
