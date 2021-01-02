@@ -46,9 +46,12 @@ var click_function = function() {
     document.getElementById("selected-name").innerText = this.getAttribute("data-name");
     document.getElementById("selected-co").innerText = this.getAttribute("data-co");
     document.getElementById("selected-aw").innerText = this.getAttribute("data-aw");
-    document.getElementById("selected-src").src = this.getAttribute("data-src");
     document.getElementById("selected-stats").innerText = this.getAttribute("data-stats");
     document.getElementById("selected-status").innerText = this.getAttribute("data-status");
+
+    document.getElementById("selected-src").src = 'public/placeholder.png';
+    document.getElementById("selected-src").src = this.getAttribute("data-src");
+
     openModal();
 };
 
@@ -83,3 +86,18 @@ document.onkeydown = function(e) {
         closeModal();
     }
 }
+
+// var img = document.getElementById('changer')
+
+// function loaded() {
+//   console.log('loaded')
+// }
+
+// if (img.complete) {
+//   loaded()
+// } else {
+//   img.addEventListener('load', loaded)
+//   img.addEventListener('error', function() {
+//     console.log('error')
+//   })
+// }
